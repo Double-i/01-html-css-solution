@@ -1,0 +1,22 @@
+{
+  "name": "01-html-css",
+  "version": "1.0.0",
+  "description": "Practice with HTML and CSS",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "./scripts/deploy.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tweb-classroom/01-html-css.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tweb-classroom/01-html-css/issues"
+  },
+  "homepage": "https://github.com/tweb-classroom/01-html-css#readme",
+  "devDependencies": {
+    "netlify-cli": "^2.63.3"
+  }
+}
