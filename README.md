@@ -6,22 +6,22 @@ The idea of this lab is to practice with HTML and CSS by implementing a responsi
 
 ## Objectives
 
-Complete the HTML and CSS files to make it look as the provided mockups: [Mockup desktop](mockup-desktop.png), [Mockup Mobile](mockup-mobile.png)
+Complete the HTML and CSS files in the `public` directory to make it look as the provided mockups: [Mockup desktop](mockup-desktop.png) and [Mockup Mobile](mockup-mobile.png).
 
 ![Mockup desktop](mockup-desktop.png)
 
 
 ## Rules
 
-- No CSS Framework is allowed for this first exercice. We think it's the best way to learn CSS.
-- Follow all the rules mentioned in the [style guide](style-guide.png) (Colors, Typography, dimensions, spacing and responsive breakpoints).
-- For any informations/rules that is not specified in the style guide, you can decide what is the appropriate value.
+- CSS Frameworks are not allowed for this exercise.
+- Follow all the rules mentioned in the [Style guide](style-guide.png): Colors, Typography, dimensions, spacing, and responsive breakpoints.
+- For any information/rules that is not specified in the style guide (eg. the height of the header), you can decide what is the appropriate value.
 
 
 ## Submission and Corrections
 
 - Please validate your HTML with https://validator.w3.org/ and your CSS with https://jigsaw.w3.org/css-validator/ before submitting your answer.
-- To check wether your work is satisfying, your project will be automatically deployed by Github Classroom and will check the results in Chrome (v85 or greater).
+- To check wether your work is satisfying, your project will be automatically deployed to [Netlify](https://www.netlify.com/) and will check the results in Chrome (v85 or greater).
 
 
 ## Local development setup
@@ -45,9 +45,7 @@ Once started, the server will serve the files in the `public` directory and auto
 - The Fonts used in the mockup can be loaded from https://fonts.google.com
 - CSS Reference https://developer.mozilla.org/en-US/docs/Web/CSS/Reference
 
-
-
 ___
 
-Happy coding !
+Happy coding 🤓 !
 
