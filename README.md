@@ -37,7 +37,7 @@ Start the server by running the following command from your project directory:
 live-server ./public
 ```
 
-Once started, the server will serve the files in the `public` directory and automatically reload the browser when you make changes to any file.
+Once started, the server will serve the files in the `public` directory and automatically reload the browser when you save any file.
 
 
 ## Resources
