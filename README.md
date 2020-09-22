@@ -1,4 +1,3 @@
-
 # HTML & CSS
 
 The idea of this lab is to practice with HTML and CSS by implementing a responsive web page based on a provided mockup.
@@ -15,13 +14,13 @@ Complete the HTML and CSS files in the `public` directory to make it look as the
 
 - CSS Frameworks are not allowed for this exercise.
 - Follow all the rules mentioned in the [Style guide](style-guide.png): Colors, Typography, dimensions, spacing, and responsive breakpoints.
-- For any information/rules that is not specified in the style guide (eg. the height of the header), you can decide what is the appropriate value.
+- For any information/rules that are not specified in the style guide (i.e. the exact height of the header), you can decide what is the appropriate value.
 
 
 ## Submission and Corrections
 
 - Please validate your HTML with https://validator.w3.org/ and your CSS with https://jigsaw.w3.org/css-validator/ before submitting your answer.
-- To check wether your work is satisfying, your project will be automatically deployed to [Netlify](https://www.netlify.com/) and will check the results in Chrome (v85 or greater).
+- To check whether your work is satisfying, your project will be automatically deployed to [Netlify](https://www.netlify.com/) and will check the results in Chrome (v85 or greater).
 
 
 ## Local development setup
@@ -48,4 +47,3 @@ Once started, the server will serve the files in the `public` directory and auto
 ___
 
 Happy coding 🤓 !
-
