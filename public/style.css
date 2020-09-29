@@ -1,46 +1,258 @@
-/* Base */
+/* 
+ * Base
+ * ====================================
+ */
+
 body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   background: #fafafa;
+  color: #000;
 }
 
-/* Utilities */
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+a {
+  color: #6601cc;
+  text-decoration: none;
+}
+
+.f-headline,
+.f-title,
+.f-subtitle {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+
+.f-headline {
+  line-height: 1;
+  font-size: 42px;
+}
+
+@media (min-width: 768px) {
+  .f-headline {
+    font-size: 60px;
+  }
+}
+
+.f-title {
+  line-height: 1;
+  font-size: 24px;
+}
+
+.f-subtitle {
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.f-body-1,
+.f-body-2 {
+  font-weight: 400;
+}
+
+.f-body-1 {
+  font-size: 16px;
+}
+
+.f-body-2 {
+  font-size: 14px;
+}
+
+/* 
+ * Utilities
+ * ====================================
+ */
 .container {
-  max-width: 1000px;
+  max-width: 1048px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
 .card {
-  background: #fff;
   padding: 24px;
+  background: #fff;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Layout */
+.btn {
+  display: inline-block;
+  padding: 10px 13px;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 150ms ease;
+}
+
+.btn-primary {
+  background: #6601cc;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #5801b0;
+}
+
+.btn-outline {
+  border-color: #fff;
+  color: #fff;
+}
+
+.btn-outline:hover {
+  background: #fff;
+  color: #000;
+}
+
+.label {
+  display: inline-block;
+  font-size: 14px;
+  padding: 6px 8px;
+  border: 1px solid #6601cc;
+  transition: all 150ms ease;
+}
+
+.label:hover {
+  background-color: #6601cc;
+  color: #fff;
+}
+
+.label-list .label {
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+.mb-1 {
+  margin-bottom: 4px;
+}
+.mb-2 {
+  margin-bottom: 8px;
+}
+.mb-3 {
+  margin-bottom: 16px;
+}
+.mb-4 {
+  margin-bottom: 24px;
+}
+
+.color-secondary {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+/* 
+ * Header
+ * ====================================
+ */
+
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 64px;
-
   background: #262c42;
   color: #fff;
 }
 
+.header-content {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.header-logo {
+  flex: 1;
+  text-align: center;
+}
+
+.header-nav {
+  display: none;
+}
+
+@media (min-width: 576px) {
+  .header-logo {
+    text-align: left;
+  }
+
+  .header-nav {
+    display: block;
+  }
+}
+
+.header-nav ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header-nav a {
+  color: #fff;
+  margin-left: 24px;
+}
+
+.header-nav a:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* 
+ * Hero section
+ * ====================================
+ */
+
 .hero {
-  padding-top: 144px;
+  padding-top: 112px;
   padding-bottom: 160px;
   background: #293046;
   color: #fff;
 }
 
-.footer {
-  margin-top: 80px;
+.hero-content {
+  max-width: 560px;
 }
 
+@media (min-width: 768px) {
+  .hero {
+    padding-top: 144px;
+  }
+  .hero-content {
+    padding-left: 56px;
+  }
+}
 
-/* Page main content */
+.hero-cta {
+  margin-right: 16px;
+  margin-bottom: 16px;
+}
+
+/* 
+ * Main content
+ * ====================================
+ */
+
 .main-content {
   padding: 0 8px;
   margin-top: -80px;
@@ -48,26 +260,32 @@ body {
 
 .article {
   margin-bottom: 16px;
-  min-height: 300px;
 }
-
-.aside {
-  min-height: 300px;
-}
-
 
 @media (min-width: 768px) {
   .main-content {
     display: flex;
+    align-items: flex-start;
+    padding: 0 24px;
   }
+
   .article {
     flex: 1;
     margin-bottom: 0;
-    margin-right: 16px;
+    margin-right: 24px;
   }
 
   .aside {
-    width: 250px;
+    width: 320px;
   }
 }
 
+/* 
+ * Footer
+ * ====================================
+ */
+
+.footer {
+  margin: 80px auto 48px;
+  text-align: center;
+}
