@@ -43,6 +43,12 @@ Once started, the server will serve the files in the `public` directory and auto
 ## Resources
 - The Fonts used in the mockup can be loaded from https://fonts.google.com
 - CSS Reference https://developer.mozilla.org/en-US/docs/Web/CSS/Reference
+- Utility first approach https://tailwindcss.com/docs/utility-first
+- Utility first libraries
+  - https://tailwindcss.com/
+  - https://tachyons.io/
+- Sass https://sass-lang.com/
+- CSS custom properties https://css-tricks.com/patterns-for-practical-css-custom-properties-use/
 
 ___
 
