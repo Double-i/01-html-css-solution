@@ -1,64 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="/css/normalize.css" />
     <link rel="stylesheet" href="/css/style.css" />
     <title>Hits of the moment | Music player</title>
   </head>
   <body>
-    <main>
-      <section data-section="playlist-info">
-        <img src="/images/2098157264.jpeg" />
-        Playlist Hits of the moment By Fábio - Deezer Pop Editor 2016 · 60 songs · 162 minutes 
-      </section>
-      <div>
-        Stay 
-        The Kid Laroi
-      </div>
-      <div>
-        INDUSTRY BABY 
-        Lil Nas X
-      </div>
-      <div>
-        Woman 
-        Doja Cat 
-      </div>
-      <div>
-        Bad Habits 
-        Ed Sheeran  
-      </div>
-      <div>
-        Way 2 Sexy
-        Drake
-      </div>
-      <div>
-        Pepas
-        Farruko
-      </div>
-      <div>
-        Take My Breath
-        The Weeknd
-      </div>
-      <div>
-        Happier Than Ever
-        Billie Eilish
-      </div>
-    </main>
+    <div class="root">
+      <main class="main">
+        <section data-section="playlist-info" class="playlist-info">
+          <img src="/images/2098157264.jpeg" class="playlist-cover" />
+          <div class="playlist-info-text">
+            <span class="body-1">Playlist</span>
+            <h1 class="playlist-title">Hits of the moment</h1>
+            <span class="body-1">By Fábio - Deezer Pop Editor</span>
+            <span class="body-1">2016 · 60 songs · 162 minutes</span>
+          </div>
+        </section>
+        <section class="songs-list">
+          <div class="song">
+            <span class="subtitle-1">Stay</span>
+            <span class="body-1">The Kid Laroi<span>
+          </div>
+          <div class="song">
+            <span class="subtitle-1">INDUSTRY BABY</span>
+            <span class="body-1">Lil Nas X</span>
+          </div>
+          <div class="song">
+            <span class="subtitle-1">Woman</span>
+            <span class="body-1">Doja Cat</span>
+          </div>
+          <div class="song">
+            <span class="subtitle-1">Bad Habits</span>
+            <span class="body-1">Ed Sheeran</span>
+          </div>
+          <div class="song">
+            <span class="subtitle-1">Way 2 Sexy</span>
+            <span class="body-1">Drake</span>
+          </div>
+          <div class="song">
+            <span class="subtitle-1">Pepas</span>
+            <span class="body-1">Farruko</span>
+          </div>
+          <div class="song">
+            <span class="subtitle-1">Take My Breath</span>
+            <span class="body-1">The Weeknd</span>
+          </div>
+          <div class="song">
+            <span class="subtitle-1">Happier Than Ever</span>
+            <span class="body-1">Billie Eilish</span>
+          </div>
+        </section>
+      </main>
 
-    <aside id="player">
-      <img src="/images/242430582.jpeg" alt="Stay" />
-      STAY The Kid Laroi
+      <aside class="player" id="player">
+        <div class="player-track">
+          <img class="track-img" src="/images/242430582.jpeg" alt="Stay" />
+          <div class="track-info">
+            <div class="track-title subtitle-2">STAY</div>
+            <div class="track-author body-2">The Kid Laroi</div>
+          </div>
+        </div>
 
-      <img src="/icons/skip_previous.svg" alt="Skip Previous" />
-      <img src="/icons/pause.svg" alt="Pause" />
-      <img src="/icons/skip_next.svg" alt="Skip Next" />
+        <div class="player-controls">
+          <img class="icon" src="/icons/skip_previous.svg" alt="Skip Previous" />
+          <img class="icon" src="/icons/pause.svg" alt="Pause" />
+          <img class="icon" src="/icons/skip_next.svg" alt="Skip Next" />
+        </div>
 
-      Powered by
-      <img src="/images/deezer-logo.svg" alt="Deezer logo" />
-    </aside>
+        <div class="player-credits">
+          <div>
+            <div class="credits-text overline">Powered by</div>
+            <img
+              class="credits-img"
+              src="/images/deezer-logo.svg"
+              alt="Deezer logo"
+            />
+          </div>
+        </div>
+      </aside>
 
-    <aside id="queue">
-      <span>Play next · 0 tracks<span>
-      This queue is empty
-    </aside>
+      <aside class="queue" id="queue">
+        <span class="queue-info body-1">Play next · 0 tracks</span>
+        <div class="empty-msg-container">
+          <span class="body-1 empty-msg">This queue is empty</span>
+        </div>
+      </aside>
+    </div>
   </body>
 </html>

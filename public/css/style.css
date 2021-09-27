@@ -1,0 +1,177 @@
+html,
+body {
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+.title {
+  font-size: 48px;
+}
+
+.body-1 {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.body-2 {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.subtitle-1 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.subtitle-2 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.overline {
+  font-size: 12px;
+}
+
+.root {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 1fr auto;
+  height: 100%;
+  grid-template-areas:
+    "main queue"
+    "player player";
+}
+
+.main {
+  grid-area: main;
+  padding: 86px;
+  overflow: auto;
+}
+
+.queue {
+  width: 300px;
+  grid-area: queue;
+  background: #f3f4f6;
+  position: relative;
+  /* TODO: fix tests */
+  /* border-left: 1px solid #d1d5db; */
+}
+
+.player {
+  grid-area: player;
+  height: 80px;
+  /* TODO: fix tests */
+  /* border-top: 1px solid #d1d5db; */
+}
+
+/* Playlist */
+.playlist-info {
+  display: flex;
+}
+.playlist-info-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding-left: 32px;
+}
+
+.playlist-cover {
+  width: 250px;
+  height: 250px;
+}
+.playlist-title {
+  font-size: 48px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+/* Songs list */
+.songs-list {
+  margin-top: 32px;
+}
+
+.song {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+/* Player layout */
+.player {
+  display: flex;
+  align-items: center;
+}
+
+.player .track-title {
+  margin-bottom: 2px;
+}
+
+.player-track {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 30%;
+}
+
+.player-controls {
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  gap: 32px;
+}
+
+.player-credits {
+  display: flex;
+  justify-content: end;
+  width: 30%;
+  padding-right: 16px;
+}
+
+.player-controls .icon {
+  width: 40px;
+  height: auto;
+}
+
+.player .track-img {
+  height: 100%;
+}
+
+.player .track-info {
+  margin-left: 16px;
+}
+
+.player .credits-img {
+  height: 30px;
+}
+
+.player .credits-text {
+  margin-bottom: 2px;
+}
+
+/* Queue */
+.queue-info {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  width: 100%;
+}
+.empty-msg-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.empty-msg {
+  color: #a6a6a6;
+}

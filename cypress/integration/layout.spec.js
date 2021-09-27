@@ -1,14 +1,13 @@
 /// <reference types="cypress" />
 
 describe("Layout", function () {
-  before(() => {
-    cy.configureLayoutInspector({ threshold: 4 });
+  before(function () {
+    cy.configureLayoutInspector({ threshold: 4, excludePadding: false });
   });
 
   beforeEach(function () {
     cy.visit("http://localhost:8080", {});
-
-    cy.get('main').as('main');
+    cy.get("main").as("main");
     // playlist info
     cy.get("main").get("img").as("playlistCover");
     cy.get("main").contains("Playlist").as("type");
@@ -17,7 +16,7 @@ describe("Layout", function () {
       .contains("By Fábio - Deezer Pop Editor")
       .as("playlistAuthor");
     cy.get("main").contains("2016 · 60 songs · 162 minutes").as("playlistInfo");
-    cy.get('[data-section="playlist-info"]').as('playlistSection');
+    cy.get('[data-section="playlist-info"]').as("playlistSection");
 
     // player
     cy.get("#player").as("player");
@@ -38,21 +37,26 @@ describe("Layout", function () {
     cy.get("#queue").contains("This queue is empty").as("queueContent");
   });
 
-  it.skip("renders the playlist info", function () {
+  it("renders the playlist info", function () {
     cy.get(this.playlistCover).should("be.width", 250);
-    cy.get(this.playlistCover).should("be.inside", this.main, {top: 86, left: 86});
+    cy.get(this.playlistCover).should("be.inside", this.main, {
+      top: 86,
+      left: 86,
+    });
     cy.get(this.playlistTitle).should("be.rightOf", this.playlistCover, 32);
-    cy.get(this.type).should("be.above", this.title, 24);
-    cy.get(this.playlistAuthor).should("be.below", this.title, 24);
+    cy.get(this.type).should("be.above", this.playlistTitle, 6);
+    cy.get(this.playlistAuthor).should("be.below", this.playlistTitle, 6);
     cy.get(this.playlistInfo).should("be.below", this.playlistAuthor, 4);
-    cy.get(this.playlistInfo).should("be.inside", this.playlistSection, {bottom: 0});
+    cy.get(this.playlistInfo).should("be.inside", this.playlistSection, {
+      bottom: 0,
+    });
   });
 
   it("should render player", function () {
-    cy.get(this.trackImage).should("be.height", 80);
-    cy.get(this.trackImage).should("be.width", 80);
+    cy.get(this.trackImage).should('height.be.within', 75, 85)
+    cy.get(this.trackImage).should("width.be.within", 75, 85);
     cy.get(this.trackImage).should("be.inside", this.player, {
-      top: 0,
+      top: 1, // TODO: use threshold
       bottom: 0,
       left: 0,
     });
@@ -60,8 +64,8 @@ describe("Layout", function () {
     cy.get(this.trackAuthor).should("be.rightOf", this.trackImage, 16);
     cy.get(this.trackTitle).should("be.above", this.trackAuthor);
 
-    cy.get(this.pauseIcon).should("be.verticallyAligned", this.player);
-    cy.get(this.pauseIcon).should("be.horizontallyAligned", this.player);
+    cy.get(this.pauseIcon).should("be.verticallyAligned", this.player, 'centered');
+    cy.get(this.pauseIcon).should("be.horizontallyAligned", this.player, 'centered');
     cy.get(this.pauseIcon).should("be.rightOf", this.previousIcon, 32);
     cy.get(this.pauseIcon).should("be.leftOf", this.nextIcon, 32);
 
@@ -74,21 +78,21 @@ describe("Layout", function () {
       top: 32,
       left: 32,
     });
-    cy.get(this.queueContent).should("be.horizontallyAligned", this.queue);
-    cy.get(this.queueContent).should("be.verticallyAligned", this.queue);
+    cy.get(this.queueContent).should("be.horizontallyAligned", this.queue, 'centered');
+    cy.get(this.queueContent).should("be.verticallyAligned", this.queue, 'centered');
   });
 
   describe("songs", function () {
     beforeEach(function () {
       cy.get("main").contains("Stay").as("track1");
       cy.get("main").contains("The Kid Laroi").as("artist1");
-      
+
       cy.get("main").contains("INDUSTRY BABY").as("track2");
       cy.get("main").contains("Lil Nas X").as("artist2");
 
       cy.get("main").contains("Woman").as("track3");
       cy.get("main").contains("Doja Cat").as("artist3");
-      
+
       cy.get("main").contains("Bad Habits").as("track4");
       cy.get("main").contains("Ed Sheeran").as("artist4");
 
@@ -104,11 +108,10 @@ describe("Layout", function () {
       cy.get("main").contains("Happier Than Ever").as("track7");
       cy.get("main").contains("Billie Eilish").as("artist7");
     });
-    
-    it.only("should render song list", function () {
+
+    it("should render song list", function () {
       cy.get(this.track1).should("be.above", this.artist1, 4);
       cy.get(this.artist1).should("be.above", this.track2, 32);
-
 
       cy.get(this.track2).should("be.above", this.artist2, 4);
       cy.get(this.artist2).should("be.above", this.track3, 32);
@@ -124,13 +127,13 @@ describe("Layout", function () {
 
       cy.get(this.track7).should("be.above", this.artist7, 4);
 
-      cy.get(this.track1).should('be.inside', this.main, { left: 86 })
-      cy.get(this.track2).should('be.inside', this.main, { left: 86 })
-      cy.get(this.track3).should('be.inside', this.main, { left: 86 })
-      cy.get(this.track4).should('be.inside', this.main, { left: 86 })
-      cy.get(this.track5).should('be.inside', this.main, { left: 86 })
-      cy.get(this.track6).should('be.inside', this.main, { left: 86 })
-      cy.get(this.track7).should('be.inside', this.main, { left: 86 })
+      cy.get(this.track1).should("be.inside", this.main, { left: 86 });
+      cy.get(this.track2).should("be.inside", this.main, { left: 86 });
+      cy.get(this.track3).should("be.inside", this.main, { left: 86 });
+      cy.get(this.track4).should("be.inside", this.main, { left: 86 });
+      cy.get(this.track5).should("be.inside", this.main, { left: 86 });
+      cy.get(this.track6).should("be.inside", this.main, { left: 86 });
+      cy.get(this.track7).should("be.inside", this.main, { left: 86 });
     });
   });
 });
