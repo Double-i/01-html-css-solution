@@ -4,19 +4,26 @@
   "description": "Practice with HTML and CSS",
   "main": "index.js",
   "scripts": {
-    "deploy": "./scripts/deploy.sh ./public"
+    "deploy": "./scripts/deploy.sh ./public",
+    "dev": "live-server ./public",
+    "start": "serve ./public -l 8080",
+    "cypress:open": "cypress open"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tweb-classroom/01-html-css.git"
+    "url": "git+https://github.com/web-classroom/01-html-css.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tweb-classroom/01-html-css/issues"
+    "url": "https://github.com/web-classroom/01-html-css/issues"
   },
-  "homepage": "https://github.com/tweb-classroom/01-html-css#readme",
+  "homepage": "https://github.com/web-classroom/01-html-css#readme",
   "devDependencies": {
-    "netlify-cli": "^2.63.3"
+    "cypress": "^8.4.1",
+    "cypress-layout-inspector": "^1.5.0",
+    "live-server": "^1.2.1",
+    "netlify-cli": "^2.63.3",
+    "serve": "^12.0.1"
   }
 }
