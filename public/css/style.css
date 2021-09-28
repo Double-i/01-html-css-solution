@@ -1,6 +1,7 @@
 html,
 body {
   height: 100%;
+  font-family: "Noto Sans", sans-serif;
 }
 
 h1,
@@ -28,13 +29,13 @@ h6 {
 
 .subtitle-1 {
   font-size: 16px;
-  font-weight: 500;
+  font-weight: bold;
   line-height: 1.5;
 }
 
 .subtitle-2 {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: bold;
   line-height: 1.5;
 }
 
