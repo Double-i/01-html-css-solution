@@ -2,14 +2,14 @@
 
 describe("Layout", function () {
   before(function () {
-    cy.configureLayoutInspector({ threshold: 4, excludePadding: false });
+    cy.configureLayoutInspector({ threshold: 4, excludePadding: true });
   });
 
   beforeEach(function () {
     cy.visit("http://localhost:8080", {});
     cy.get("main").as("main");
     // playlist info
-    cy.get("main").get("img").as("playlistCover");
+    cy.get("main").find("img").as("playlistCover");
     cy.get("main").contains("Playlist").as("type");
     cy.get("main").contains("Hits of the moment").as("playlistTitle");
     cy.get("main")
@@ -20,21 +20,25 @@ describe("Layout", function () {
 
     // player
     cy.get("#player").as("player");
-    cy.get("#player").get('img[alt="Stay"]').as("trackImage");
+    cy.get("#player").find('img[alt="Stay"]').as("trackImage");
     cy.get("#player").contains("STAY").as("trackTitle");
     cy.get("#player").contains("The Kid Laroi").as("trackAuthor");
 
-    cy.get("#player").get('img[alt="Skip Previous"]').as("previousIcon");
-    cy.get("#player").get('img[alt="Pause"]').as("pauseIcon");
-    cy.get("#player").get('img[alt="Skip Next"]').as("nextIcon");
+    cy.get("#player").find('img[alt="Skip Previous"]').as("previousIcon");
+    cy.get("#player").find('img[alt="Pause"]').as("pauseIcon");
+    cy.get("#player").find('img[alt="Skip Next"]').as("nextIcon");
 
     cy.get("#player").contains("Powered by").as("poweredBy");
-    cy.get("#player").get('img[alt="Deezer logo"]').as("deezerLogo");
+    cy.get("#player").find('img[alt="Deezer logo"]').as("deezerLogo");
 
     // queue
     cy.get("#queue").as("queue");
     cy.get("#queue").contains("Play next · 0 tracks").as("queueInfo");
     cy.get("#queue").contains("This queue is empty").as("queueContent");
+  });
+
+  it("page body should not overlow horizontally", function () {
+    cy.get("body").should("not.be.overflowing", "horizontally");
   });
 
   it("renders the playlist info", function () {
@@ -53,7 +57,7 @@ describe("Layout", function () {
   });
 
   it("should render player", function () {
-    cy.get(this.trackImage).should('height.be.within', 75, 85)
+    cy.get(this.trackImage).should("height.be.within", 75, 85);
     cy.get(this.trackImage).should("width.be.within", 75, 85);
     cy.get(this.trackImage).should("be.inside", this.player, {
       top: 1, // TODO: use threshold
@@ -64,8 +68,16 @@ describe("Layout", function () {
     cy.get(this.trackAuthor).should("be.rightOf", this.trackImage, 16);
     cy.get(this.trackTitle).should("be.above", this.trackAuthor);
 
-    cy.get(this.pauseIcon).should("be.verticallyAligned", this.player, 'centered');
-    cy.get(this.pauseIcon).should("be.horizontallyAligned", this.player, 'centered');
+    cy.get(this.pauseIcon).should(
+      "be.verticallyAligned",
+      this.player,
+      "centered"
+    );
+    cy.get(this.pauseIcon).should(
+      "be.horizontallyAligned",
+      this.player,
+      "centered"
+    );
     cy.get(this.pauseIcon).should("be.rightOf", this.previousIcon, 32);
     cy.get(this.pauseIcon).should("be.leftOf", this.nextIcon, 32);
 
@@ -73,13 +85,41 @@ describe("Layout", function () {
     cy.get(this.poweredBy).should("be.above", this.deezerLogo);
   });
 
+  it("should keep player visible", function () {
+    const checkPlayerPosition = () => {
+      console.log("checkPlayerPosition");
+      cy.get("#player")
+        .then((elem) => elem[0].getBoundingClientRect().bottom)
+        .then((bottom) => {
+          assert.equal(
+            bottom,
+            Cypress.config().viewportHeight,
+            "the player should stick to the bottom of the screen"
+          );
+        });
+    };
+
+    checkPlayerPosition();
+    // Scroll to last song
+    cy.get("main").contains("Billie Eilish").scrollIntoView();
+    checkPlayerPosition();
+  });
+
   it("should render queue", function () {
     cy.get(this.queueInfo).should("be.inside", this.queue, {
       top: 32,
       left: 32,
     });
-    cy.get(this.queueContent).should("be.horizontallyAligned", this.queue, 'centered');
-    cy.get(this.queueContent).should("be.verticallyAligned", this.queue, 'centered');
+    cy.get(this.queueContent).should(
+      "be.horizontallyAligned",
+      this.queue,
+      "centered"
+    );
+    cy.get(this.queueContent).should(
+      "be.verticallyAligned",
+      this.queue,
+      "centered"
+    );
   });
 
   describe("songs", function () {

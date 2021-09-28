@@ -63,15 +63,13 @@ h6 {
   grid-area: queue;
   background: #f3f4f6;
   position: relative;
-  /* TODO: fix tests */
-  /* border-left: 1px solid #d1d5db; */
+  border-left: 1px solid #d1d5db;
 }
 
 .player {
   grid-area: player;
   height: 80px;
-  /* TODO: fix tests */
-  /* border-top: 1px solid #d1d5db; */
+  border-top: 1px solid #d1d5db;
 }
 
 /* Playlist */
@@ -161,8 +159,9 @@ h6 {
 /* Queue */
 .queue-info {
   position: absolute;
-  top: 32px;
-  left: 32px;
+  top: 0;
+  left: 0;
+  padding: 32px;
   width: 100%;
 }
 .empty-msg-container {
