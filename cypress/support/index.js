@@ -1,1 +1,1 @@
-import './commands'
+import 'cypress-layout-inspector/add-support';
