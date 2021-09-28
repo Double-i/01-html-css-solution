@@ -2,10 +2,9 @@
   "name": "01-html-css",
   "version": "1.0.0",
   "description": "Practice with HTML and CSS",
-  "main": "index.js",
   "scripts": {
     "deploy": "./scripts/deploy.sh ./public",
-    "dev": "live-server ./public",
+    "dev": "live-server ./public --port 8080",
     "start": "serve ./public -l 8080",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run --browser chromium"
@@ -14,8 +13,8 @@
     "type": "git",
     "url": "git+https://github.com/web-classroom/01-html-css-solution.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Paul Nta <paul.ntawuruhunga@gmail.com>",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/web-classroom/01-html-css-solution/issues"
   },
