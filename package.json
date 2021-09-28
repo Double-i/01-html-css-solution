@@ -7,7 +7,10 @@
     "deploy": "./scripts/deploy.sh ./public",
     "dev": "live-server ./public",
     "start": "serve ./public -l 8080",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run --browser chromium",
+    "test": "cypress:run",
+    "test-with-server": "start-server-and-test start http://localhost:8080"
   },
   "repository": {
     "type": "git",
