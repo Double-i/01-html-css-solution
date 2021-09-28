@@ -2,3 +2,6 @@ node_modules
 npm-debug.log
 .vscode
 .idea
+/cypress/screenshots/
+/cypress/videos/
+/cypress/.DS_Store
