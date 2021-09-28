@@ -76,11 +76,12 @@ describe('Layout', function () {
       top: 86,
       left: 86,
     });
-    cy.get(this.playlistTitle).should('be.rightOf', this.playlistCover, 32);
-    cy.get(this.type).should('be.above', this.playlistTitle, 8);
-    cy.get(this.playlistAuthor).should('be.below', this.playlistTitle, 8);
-    cy.get(this.playlistInfo).should('be.below', this.playlistAuthor, 0);
-    cy.get(this.playlistInfo).should('be.inside', this.playlistSection, {
+    cy.get(this.playlistTitle).should("be.rightOf", this.playlistCover, 32);
+    cy.get(this.playlistTitle).should("have.css", 'font-family', '"Noto Sans", sans-serif')
+    cy.get(this.type).should("be.above", this.playlistTitle, 8);
+    cy.get(this.playlistAuthor).should("be.below", this.playlistTitle, 8);
+    cy.get(this.playlistInfo).should("be.below", this.playlistAuthor, 0);
+    cy.get(this.playlistInfo).should("be.inside", this.playlistSection, {
       bottom: 0,
     });
   });
@@ -157,7 +158,7 @@ describe('Layout', function () {
     // player
     cy.get(this.trackTitle).should('have.css', 'font-size', '14px');
     cy.get(this.trackTitle).should('have.css', 'line-height', '21px');
-    cy.get(this.trackTitle).should('have.css', 'font-weight', '500');
+    cy.get(this.trackTitle).should('have.css', 'font-weight', '700');
 
     cy.get(this.trackAuthor).should('have.css', 'font-size', '14px');
     cy.get(this.trackAuthor).should('have.css', 'line-height', '21px');
@@ -180,27 +181,27 @@ describe('Layout', function () {
     // queue
     cy.get(this.track1).should('have.css', 'font-size', '16px');
     cy.get(this.track1).should('have.css', 'line-height', '24px');
-    cy.get(this.track1).should('have.css', 'font-weight', '500');
+    cy.get(this.track1).should('have.css', 'font-weight', '700');
 
     cy.get(this.track2).should('have.css', 'font-size', '16px');
     cy.get(this.track2).should('have.css', 'line-height', '24px');
-    cy.get(this.track2).should('have.css', 'font-weight', '500');
+    cy.get(this.track2).should('have.css', 'font-weight', '700');
 
     cy.get(this.track3).should('have.css', 'font-size', '16px');
     cy.get(this.track3).should('have.css', 'line-height', '24px');
-    cy.get(this.track3).should('have.css', 'font-weight', '500');
+    cy.get(this.track3).should('have.css', 'font-weight', '700');
 
     cy.get(this.track4).should('have.css', 'font-size', '16px');
     cy.get(this.track4).should('have.css', 'line-height', '24px');
-    cy.get(this.track4).should('have.css', 'font-weight', '500');
+    cy.get(this.track4).should('have.css', 'font-weight', '700');
 
     cy.get(this.track5).should('have.css', 'font-size', '16px');
     cy.get(this.track5).should('have.css', 'line-height', '24px');
-    cy.get(this.track5).should('have.css', 'font-weight', '500');
+    cy.get(this.track5).should('have.css', 'font-weight', '700');
 
     cy.get(this.track6).should('have.css', 'font-size', '16px');
     cy.get(this.track6).should('have.css', 'line-height', '24px');
-    cy.get(this.track6).should('have.css', 'font-weight', '500');
+    cy.get(this.track6).should('have.css', 'font-weight', '700');
 
     cy.get(this.artist1).should('have.css', 'font-size', '16px');
     cy.get(this.artist1).should('have.css', 'line-height', '24px');
