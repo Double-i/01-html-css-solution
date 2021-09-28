@@ -48,8 +48,8 @@ h6 {
   grid-template-rows: 1fr auto;
   height: 100%;
   grid-template-areas:
-    "main queue"
-    "player player";
+    'main queue'
+    'player player';
 }
 
 .main {
