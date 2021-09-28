@@ -8,7 +8,7 @@ The idea of this lab is to practice with HTML and CSS by implementing a responsi
 Complete the HTML and CSS files in the `public` directory to make it look as the provided mockups: [Mockup desktop](mockup
 .png).
 
-![Mockup desktop](mockup.png)
+![Mockup](mockup.png)
 
 
 ## Rules
