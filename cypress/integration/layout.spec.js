@@ -77,9 +77,9 @@ describe('Layout', function () {
       left: 86,
     });
     cy.get(this.playlistTitle).should('be.rightOf', this.playlistCover, 32);
-    cy.get(this.type).should('be.above', this.playlistTitle, 6);
-    cy.get(this.playlistAuthor).should('be.below', this.playlistTitle, 6);
-    cy.get(this.playlistInfo).should('be.below', this.playlistAuthor, 4);
+    cy.get(this.type).should('be.above', this.playlistTitle, 8);
+    cy.get(this.playlistAuthor).should('be.below', this.playlistTitle, 8);
+    cy.get(this.playlistInfo).should('be.below', this.playlistAuthor, 0);
     cy.get(this.playlistInfo).should('be.inside', this.playlistSection, {
       bottom: 0,
     });
@@ -95,7 +95,7 @@ describe('Layout', function () {
     });
     cy.get(this.trackTitle).should('be.rightOf', this.trackImage, 16);
     cy.get(this.trackAuthor).should('be.rightOf', this.trackImage, 16);
-    cy.get(this.trackTitle).should('be.above', this.trackAuthor);
+    cy.get(this.trackTitle).should('be.above', this.trackAuthor, 0);
 
     cy.get(this.pauseIcon).should('be.verticallyAligned', this.player, 'centered');
     cy.get(this.pauseIcon).should('be.horizontallyAligned', this.player, 'centered');
@@ -131,10 +131,8 @@ describe('Layout', function () {
   });
 
   it('should render queue', function () {
-    cy.get(this.queueInfo).should('be.inside', this.queue, {
-      top: 32,
-      left: 32,
-    });
+    cy.get(this.queue).should('width.be.within', 328, 332);
+    cy.get(this.queueInfo).should('be.inside', this.queue, { top: 32, left: 32 });
     cy.get(this.queueContent).should('be.horizontallyAligned', this.queue, 'centered');
     cy.get(this.queueContent).should('be.verticallyAligned', this.queue, 'centered');
     cy.get(this.queue).should('have.css', 'background-color', 'rgb(243, 244, 246)');
@@ -146,6 +144,7 @@ describe('Layout', function () {
     cy.get(this.type).should('have.css', 'line-height', '24px');
 
     cy.get(this.playlistTitle).should('have.css', 'font-size', '48px');
+    cy.get(this.playlistTitle).should('have.css', 'line-height', '60px');
 
     cy.get(this.playlistAuthor).should('have.css', 'font-size', '16px');
     cy.get(this.playlistAuthor).should('have.css', 'line-height', '24px');
@@ -164,6 +163,7 @@ describe('Layout', function () {
     cy.get(this.trackAuthor).should('have.css', 'line-height', '21px');
 
     cy.get(this.poweredBy).should('have.css', 'font-size', '12px');
+    cy.get(this.poweredBy).should('have.css', 'line-height', '18px');
   });
 
   it('should have correct font (queue)', function () {
@@ -173,7 +173,7 @@ describe('Layout', function () {
 
     cy.get(this.queueContent).should('have.css', 'font-size', '16px');
     cy.get(this.queueContent).should('have.css', 'line-height', '24px');
-    cy.get(this.queueContent).should('have.css', 'color', 'rgb(166, 166, 166)');
+    cy.get(this.queueContent).should('have.css', 'color', 'rgb(156, 163, 175)');
   });
 
   it('should have correct font (song list)', function () {
