@@ -7,7 +7,9 @@
     "dev": "live-server ./public --port 8080",
     "start": "serve ./public -l 8080",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run --browser chromium"
+    "cypress:run": "cypress run --browser chromium",
+    "test": "cypress:run",
+    "test-with-server": "start-server-and-test start http://localhost:8080"
   },
   "repository": {
     "type": "git",
