@@ -14,7 +14,6 @@ describe('Playlist info', function () {
     cy.visit('/');
 
     cy.get('main').as('main');
-    // playlist info
     cy.get('main').find('img').as('playlistCover');
     cy.get('main').contains('Playlist').as('type');
     cy.get('main').contains('Hits of the moment').as('playlistTitle');
@@ -40,7 +39,6 @@ describe('Playlist info', function () {
   });
 
   it('should use the right font', function () {
-    // playlist info
     cy.get(this.type).should('have.css', 'font-size', '16px');
     cy.get(this.type).should('have.css', 'line-height', '24px');
 

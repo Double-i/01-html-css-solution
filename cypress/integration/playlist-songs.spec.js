@@ -69,7 +69,6 @@ describe('Playlist songs', function () {
   });
 
   it('should use the right font', function () {
-    // queue
     cy.get(this.track1).should('have.css', 'font-size', '16px');
     cy.get(this.track1).should('have.css', 'line-height', '24px');
     cy.get(this.track1).should('have.css', 'font-weight', '700');

@@ -9,7 +9,7 @@ before(function () {
   });
 });
 
-describe('Player', function () {
+describe('Playe', function () {
   beforeEach(function () {
     cy.visit('/');
 
@@ -30,7 +30,7 @@ describe('Player', function () {
     cy.get(this.trackImage).should('height.be.within', 75, 85);
     cy.get(this.trackImage).should('width.be.within', 75, 85);
     cy.get(this.trackImage).should('be.inside', this.player, {
-      top: 1, // TODO: use threshold
+      top: 1,
       bottom: 0,
       left: 0,
     });
@@ -52,7 +52,6 @@ describe('Player', function () {
   });
 
   it('should use the right font', function () {
-    // player
     cy.get(this.trackTitle).should('have.css', 'font-size', '14px');
     cy.get(this.trackTitle).should('have.css', 'line-height', '21px');
     cy.get(this.trackTitle).should('have.css', 'font-weight', '700');
