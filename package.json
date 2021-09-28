@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/web-classroom/01-html-css.git"
+    "url": "git+https://github.com/web-classroom/01-html-css-solution.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/web-classroom/01-html-css/issues"
+    "url": "https://github.com/web-classroom/01-html-css-solution/issues"
   },
-  "homepage": "https://github.com/web-classroom/01-html-css#readme",
+  "homepage": "https://github.com/web-classroom/01-html-css-solution#readme",
   "devDependencies": {
     "cypress": "^8.4.1",
     "cypress-layout-inspector": "git://github.com/paulnta/cypress-layout-inspector.git#next",
