@@ -9,9 +9,9 @@ before(function () {
   });
 });
 
-describe('Playe', function () {
+describe('Player', function () {
   beforeEach(function () {
-    cy.visit('/');
+    cy.visit('http://localhost:8080/');
 
     cy.get('#player').as('player');
     cy.get('#player').find('img[alt="Stay"]').as('trackImage');

@@ -11,7 +11,7 @@ before(function () {
 
 describe('Playlist songs', function () {
   beforeEach(function () {
-    cy.visit('/');
+    cy.visit('http://localhost:8080/');
 
     cy.get('main').as('main');
 

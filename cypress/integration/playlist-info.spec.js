@@ -11,7 +11,7 @@ before(function () {
 
 describe('Playlist info', function () {
   beforeEach(function () {
-    cy.visit('/');
+    cy.visit('http://localhost:8080/');
 
     cy.get('main').as('main');
     cy.get('main').find('img').as('playlistCover');
@@ -19,12 +19,12 @@ describe('Playlist info', function () {
     cy.get('main').contains('Hits of the moment').as('playlistTitle');
     cy.get('main').contains('By Fábio - Deezer Pop Editor').as('playlistAuthor');
     cy.get('main').contains('2016 · 60 songs · 162 minutes').as('playlistInfo');
-    cy.get('[data-section="playlist-info"]').as('playlistSection');
+    cy.get('#playlist-info').as('playlistSection');
   });
 
   it('should render the layout', function () {
     cy.get(this.playlistCover).should('be.width', 250);
-    cy.get(this.playlistCover).should('be.inside', this.main, {
+    cy.get(this.playlistCover).should('be.inside', 'html', {
       top: 86,
       left: 86,
     });

@@ -11,7 +11,7 @@ before(function () {
 
 describe('Queue', function () {
   beforeEach(function () {
-    cy.visit('/');
+    cy.visit('http://localhost:8080/');
 
     cy.get('#queue').as('queue');
     cy.get('#queue').contains('Play next · 0 tracks').as('queueInfo');

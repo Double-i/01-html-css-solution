@@ -11,7 +11,7 @@ before(function () {
 
 describe('Scroll', function () {
   beforeEach(function () {
-    cy.visit('/');
+    cy.visit('http://localhost:8080/');
   });
 
   it('should keep player visible even when scrolling', function () {
