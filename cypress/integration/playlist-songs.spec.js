@@ -59,13 +59,13 @@ describe('Playlist songs', function () {
 
     cy.get(this.track7).should('be.above', this.artist7, 4);
 
-    cy.get(this.track1).should('be.inside', this.main, { left: 86 });
-    cy.get(this.track2).should('be.inside', this.main, { left: 86 });
-    cy.get(this.track3).should('be.inside', this.main, { left: 86 });
-    cy.get(this.track4).should('be.inside', this.main, { left: 86 });
-    cy.get(this.track5).should('be.inside', this.main, { left: 86 });
-    cy.get(this.track6).should('be.inside', this.main, { left: 86 });
-    cy.get(this.track7).should('be.inside', this.main, { left: 86 });
+    cy.get(this.track1).should('be.inside', 'html', { left: 102 });
+    cy.get(this.track2).should('be.inside', 'html', { left: 102 });
+    cy.get(this.track3).should('be.inside', 'html', { left: 102 });
+    cy.get(this.track4).should('be.inside', 'html', { left: 102 });
+    cy.get(this.track5).should('be.inside', 'html', { left: 102 });
+    cy.get(this.track6).should('be.inside', 'html', { left: 102 });
+    cy.get(this.track7).should('be.inside', 'html', { left: 102 });
   });
 
   it('should use the right font', function () {

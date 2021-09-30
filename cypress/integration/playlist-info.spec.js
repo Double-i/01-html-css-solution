@@ -33,9 +33,7 @@ describe('Playlist info', function () {
     cy.get(this.type).should('be.above', this.playlistTitle, 8);
     cy.get(this.playlistAuthor).should('be.below', this.playlistTitle, 8);
     cy.get(this.playlistInfo).should('be.below', this.playlistAuthor, 0);
-    cy.get(this.playlistInfo).should('be.inside', this.playlistSection, {
-      bottom: 0,
-    });
+    cy.get(this.playlistInfo).should('be.verticallyAligned', this.playlistCover, 'bottom') 
   });
 
   it('should use the right font', function () {
