@@ -1,14 +1,5 @@
 /// <reference types="cypress" />
 
-before(function () {
-  // Add pixels threshold for assertions
-  // and ensure padding are not included when calculating elements dimensions and positions
-  cy.configureLayoutInspector({
-    threshold: 4,
-    excludePadding: true,
-  });
-});
-
 describe('Queue', function () {
   beforeEach(function () {
     cy.visit('http://localhost:8080/');
@@ -19,12 +10,17 @@ describe('Queue', function () {
   });
 
   it('should render the layout', function () {
-    cy.get(this.queue).should('width.be.within', 328, 332);
+    cy.configureLayoutInspector({ threshold: 4, excludePadding: true });
     cy.get(this.queueInfo).should('be.inside', this.queue, { top: 32, left: 32 });
     cy.get(this.queueContent).should('be.horizontallyAligned', this.queue, 'centered');
     cy.get(this.queueContent).should('be.verticallyAligned', this.queue, 'centered');
     cy.get(this.queue).should('have.css', 'background-color', 'rgb(243, 244, 246)');
   });
+
+  it('should be 330px width', function() {
+    cy.configureLayoutInspector({ excludePadding: false })
+    cy.get(this.queue).should('width.be.within', 328, 332);
+  })
 
   it('should use the right font', function () {
     cy.get(this.queueInfo).should('have.css', 'font-size', '16px');
